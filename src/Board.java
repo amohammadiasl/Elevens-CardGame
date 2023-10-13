@@ -25,10 +25,10 @@ public abstract class Board {
 
 	/**
 	 * Creates a new <code>Board</code> instance.
-	 * @param size is the number of cards in the board
-	 * @param ranks is the names of the card ranks needed to create the deck
-	 * @param suits is the names of the card suits needed to create the deck
-	 * @param pointValues is the integer values of the cards needed to create
+	 * The parameter size is the number of cards in the board
+	 * The parameter ranks is the names of the card ranks needed to create the deck
+	 * The parameter suits is the names of the card suits needed to create the deck
+	 * The parameter pointValues is the integer values of the cards needed to create
 	 *                    the deck
 	 */
 	public Board(int size, String[] ranks, String[] suits, int[] pointValues) {
@@ -56,7 +56,6 @@ public abstract class Board {
 
 	/**
 	 * Determines if the board is empty (has no cards).
-	 * @return true if this board is empty; false otherwise.
 	 */
 	public boolean isEmpty() {
 		for (int k = 0; k < cards.length; k++) {
@@ -70,7 +69,7 @@ public abstract class Board {
 	/**
 	 * Deal a card to the kth position in this board.
 	 * If the deck is empty, the kth card is set to null.
-	 * @param k the index of the card to be dealt.
+	 * The parameter k is the index of the card to be dealt.
 	 */
 	public void deal(int k) {
 		cards[k] = deck.deal();
@@ -78,7 +77,7 @@ public abstract class Board {
 
 	/**
 	 * Accesses the deck's size.
-	 * @return the number of un-dealt cards left in the deck.
+	 * return the number of un-dealt cards left in the deck.
 	 */
 	public int deckSize() {
 		return deck.size();
@@ -86,8 +85,8 @@ public abstract class Board {
 
 	/**
 	 * Accesses a card on the board.
-	 * @return the card at position k on the board.
-	 * @param k is the board position of the card to return.
+	 * return the card at position k on the board.
+	 * The parameter k is the board position of the card to return.
 	 */
 	public Card cardAt(int k) {
 		return cards[k];
@@ -95,7 +94,7 @@ public abstract class Board {
 
 	/**
 	 * Replaces selected cards on the board by dealing new cards.
-	 * @param selectedCards is a list of the indices of the
+	 * The parameter selectedCards is a list of the indices of the
 	 *        cards to be replaced.
 	 */
 	public void replaceSelectedCards(List<Integer> selectedCards) {
@@ -106,7 +105,7 @@ public abstract class Board {
 
 	/**
 	 * Gets the indexes of the actual (non-null) cards on the board.
-	 * @return a List that contains the locations (indexes)
+	 * return a List that contains the locations (indexes)
 	 *         of the non-null entries on the board.
 	 */
 	public List<Integer> cardIndexes() {
@@ -121,7 +120,7 @@ public abstract class Board {
 
 	/**
 	 * Generates and returns a string representation of this board.
-	 * @return the string version of this board.
+	 * return the string version of this board.
 	 */
 	public String toString() {
 		String s = "";
@@ -134,8 +133,7 @@ public abstract class Board {
 	/**
 	 * Determine whether or not the game has been won,
 	 * when neither the board nor the deck has any more cards.
-	 * @return true when the current game has been won;
-	 * false otherwise.
+	 * return true when the current game has been won;
 	 */
 	public boolean gameIsWon() {
 		if (deck.isEmpty()) {
@@ -150,10 +148,8 @@ public abstract class Board {
 	}
 
 	/**
-	 * Method to be completed by the concrete class that determines
-	 * if the selected cards form a valid group for removal.
-	 * @param selectedCards the list of the indices of the selected cards.
-	 * @return true if the selected cards form a valid group for removal;
+	 * The parameter selectedCards the list of the indices of the selected cards.
+	 * return true if the selected cards form a valid group for removal;
 	 *         false otherwise.
 	 */
 	public abstract boolean isLegal(List<Integer> selectedCards);
@@ -161,7 +157,7 @@ public abstract class Board {
 	/**
 	 * Method to be completed by the concrete class that determines
 	 * if there are any legal plays left on the board.
-	 * @return true if there is a legal play left on the board;
+	 * return true if there is a legal play left on the board;
 	 *         false otherwise.
 	 */
 	public abstract boolean anotherPlayIsPossible();
