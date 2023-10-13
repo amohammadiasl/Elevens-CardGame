@@ -86,7 +86,7 @@ public class CardGameGUI extends JFrame implements ActionListener {
 
 	/**
 	 * Initialize the GUI.
-	 * @param gameBoard is a <code>Board</code> subclass.
+	 * The param gameBoard is a <code>Board</code> subclass.
 	 */
 	public CardGameGUI(Board gameBoard) {
 		board = gameBoard;
@@ -257,9 +257,9 @@ public class CardGameGUI extends JFrame implements ActionListener {
 	 * for example "aceclubs.GIF" or "8heartsS.GIF". The "S" indicates that
 	 * the card is selected.
 	 *
-	 * @param c Card to get the image for
-	 * @param isSelected flag that indicates if the card is selected
-	 * @return String representation of the image
+	 * The param c Card to get the image for
+	 * The param isSelected flag that indicates if the card is selected
+	 * return String representation of the image
 	 */
 	private String imageFileName(Card c, boolean isSelected) {
 		String str = "cards/";
@@ -277,7 +277,7 @@ public class CardGameGUI extends JFrame implements ActionListener {
 	/**
 	 * Respond to a button click (on either the "Replace" button
 	 * or the "Restart" button).
-	 * @param e the button click action event
+	 * The param e the button click action event
 	 */
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(replaceButton)) {
